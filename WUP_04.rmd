@@ -65,6 +65,16 @@ summary.aov(model1)
 
 The chances of getting results such as this is there was no difference between subgroups is 2.36 out of 10,000. This leads us to believe there is a difference in the test scores between subgroups.
 
+Now that we have a low P value we want to see what values are different from one another. We will now use a tukey test to find the differences.
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 16.7, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+
+Any confidence intervals that do not reach the 0 are different. LT High School compared to Graduate is shown to be different because it does not reach the 0. High School compared to Graduate is different because it does not reach the 0 either.
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
